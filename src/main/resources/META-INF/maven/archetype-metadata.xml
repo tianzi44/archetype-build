@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<archetype-descriptor name="archetype-build">
+    <!--声明哪些文件应该包含生成的骨架中-->
+    <fileSets>
+        <!--filtered表示文件中的元素是否替换为命令行输入的-->
+        <!--packaged表示是否将该目录下的内容放到生成项目的包路径下-->
+        <fileSet filtered="true" packaged="true">
+            <directory>src/main/java</directory>
+            <includes>
+                <include>**/*.java</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="true" packaged="true">
+            <directory>src/test/java</directory>
+            <includes>
+                <include>**/*.java</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="true" packaged="false">
+            <directory>src/main/resources</directory>
+            <includes>
+                <include>**/*.xml</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+    <!--声明archetype使用哪些属性-->
+    <requiredProperties>
+        <requiredProperty key ="port" />
+        <requiredProperty key ="groupId">
+            <defaultValue>com.panda521</defaultValue>
+        </requiredProperty>
+    </requiredProperties>
+
+</archetype-descriptor>
